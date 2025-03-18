@@ -2,11 +2,13 @@ import hashlib
 
 def decrypt(key, encrypted_blockchain):
     # 初期値設定・key_hashの算出
+    # Initial value setting and calculation of key_hash
     block_size = 16
     key_hash = hashlib.sha256(key).digest()
     blockchain = b''
 
     # ブロック単位でxor
+    # Apply to xor in blocks
     for i in range(0, len(encrypted_blockchain), block_size):
         encrypted_block = encrypted_blockchain[i:i + block_size]
         origin_block = xor_bytes(encrypted_block, key_hash)
@@ -15,6 +17,7 @@ def decrypt(key, encrypted_blockchain):
     return blockchain.decode()
 
 # block_chain.pyから転用
+# Adapted from block_chain.py
 def xor_bytes(a, b):
     return bytes(x ^ y for x, y in zip(a, b))
 
