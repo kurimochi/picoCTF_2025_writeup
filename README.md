@@ -49,6 +49,6 @@ The English version was translated from the Japanese version (with some changes)
 問題ごとにディレクトリが分かれていて、中にはwriteupとsolverが入っています。  
 また、writeupについては日本語版と英語版があり、ファイル名で区別する形式にしています。
 ```
-日本語版: readme_ja.md
-英語版: readme_en.md
+日本語版: writeup_ja.md
+英語版: writeup_en.md
 ```
