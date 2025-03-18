@@ -15,9 +15,3 @@
 | Forensics | 6 | 6 | 0 |
 | General Skills | 5 | 5 | 0 |
 | Binary Exploitation | 6 | 5 | 0 |
-
-## writeupの構成
-ここでは英語のwriteupも同じリポジトリに置いてあります。そのため、日本語と英語でファイル名称の末尾で区別してください。
-
-日本語: `*_ja.md`  
-英語: `*_en.md`
