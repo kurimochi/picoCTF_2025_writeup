@@ -32,8 +32,8 @@ def get_flag():
   return hex_flag
 ```
 このうち問題を解くうえで鍵になるのは、
-1. scramble関数すべて
-2. get_flag関数の3行目~6行目
+1. **scramble関数すべて**
+2. **get_flag関数の3行目~6行目**
 
 となります。この部分の逆操作をsolverで行えば良いということです。
 
@@ -49,11 +49,20 @@ def unscramble(C):
     return A
 ```
 
-さらに、2の部分を参考に`unscramble`関数で復号したものをasciiに変換します。
+さらに、2の部分を参考に`unscramble`関数で復号したものをASCIIに変換します。
 ```python
 def hex_to_ascii(hex_list):
+    origin = []
+
     for h in hex_list:
         if isinstance(h, list):
             h = h.pop(0)
-        origin = chr(int(h, 16))
+        origin.append(chr(int(h, 16)))
     return ''.join(origin)
+```
+これらの実装は同ディレクトリ内の`solver.py`にまとめてありますので、実行する際はそちらを参照してください。
+```
+$ python solver.py
+picoCTF{***********************}
+```
+これで、フラグを入手することができました。
