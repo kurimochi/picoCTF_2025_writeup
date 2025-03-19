@@ -52,13 +52,8 @@ def unscramble(C):
 さらに、2の部分を参考に`unscramble`関数で復号したものをASCIIに変換します。
 ```python
 def hex_to_ascii(hex_list):
-    origin = []
-
-    for h in hex_list:
-        if isinstance(h, list):
-            h = h.pop(0)
-        origin.append(chr(int(h, 16)))
-    return ''.join(origin)
+    return ''.join([chr(int(h.pop(0), 16)) if isinstance(h, list) else chr(int(h, 16))
+                    for h in hex_list])
 ```
 これらの実装は同ディレクトリ内の`solver.py`にまとめてありますので、実行する際はそちらを参照してください。
 ```

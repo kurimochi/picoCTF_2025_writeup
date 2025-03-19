@@ -48,13 +48,8 @@ def unscramble(C):
 In addition, convert decrypted with the `unscramble` function to ascii, referring to part 2.
 ```python
 def hex_to_ascii(hex_list):
-    origin = []
-
-    for h in hex_list:
-        if isinstance(h, list):
-            h = h.pop(0)
-        origin.append(chr(int(h, 16)))
-    return ''.join(origin)
+    return ''.join([chr(int(h.pop(0), 16)) if isinstance(h, list) else chr(int(h, 16))
+                    for h in hex_list])
 ```
 These implementations are summarized in `solver.py` in the same directory, so please refer to it when executing.
 ```
